@@ -1,0 +1,6 @@
+Button:disabled{
+    -fx-text-fill: #000;
+}
+Button{
+    -fx-text-fill: #000;
+}
