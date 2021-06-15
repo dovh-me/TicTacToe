@@ -234,4 +234,12 @@ public class Game {
             tile.resetTileText();
         }
     }
+
+    public boolean gameOver(){
+        for(int i = 0; i < tiles.length; i++){
+            if(!tiles[i].isPlayed()) break;
+            else if(i == tiles.length -1) return true;
+        }
+        return false;
+    }
 }
