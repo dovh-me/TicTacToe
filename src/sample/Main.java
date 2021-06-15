@@ -13,7 +13,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Tic Tac Toe");
-        primaryStage.setScene(new Scene(root, 517, 567));
+        primaryStage.setScene(new Scene(root, 517, 671));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
     }

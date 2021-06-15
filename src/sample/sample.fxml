@@ -10,12 +10,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="567.0" prefWidth="517.0" style="-fx-background-radius: 10; -fx-border-color: #3692B0; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="671.0" prefWidth="517.0" style="-fx-background-radius: 10; -fx-border-color: #3692B0; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <AnchorPane layoutX="6.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="503.0" style="-fx-background-radius: 10;" styleClass="mainPane" stylesheets="@tileStyle.css">
+      <AnchorPane layoutX="6.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="503.0" style="-fx-background-radius: 10;" styleClass="mainPane" stylesheets="@tileStyle.css">
          <children>
-            <GridPane fx:id="board" alignment="CENTER" hgap="8.0" layoutX="50.0" layoutY="59.0" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: transparent;" stylesheets="@tileStyle.css" vgap="8.0">
+            <GridPane fx:id="board" alignment="CENTER" hgap="8.0" layoutX="52.0" layoutY="131.0" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: transparent;" stylesheets="@tileStyle.css" vgap="8.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -101,7 +100,7 @@
                   </Button>
                </children>
             </GridPane>
-            <AnchorPane fx:id="winAnchorPane" prefHeight="544.0" prefWidth="500.0" style="-fx-background-color: rgba(0,0,0,0.4);" visible="false">
+            <AnchorPane fx:id="winAnchorPane" layoutX="-7.0" layoutY="-11.0" prefHeight="671.0" prefWidth="518.0" style="-fx-background-color: rgba(0,0,0,0.4);" visible="false">
                <children>
                   <Button fx:id="newGameButton" layoutX="167.0" layoutY="308.0" mnemonicParsing="false" onAction="#newGame" prefHeight="50.0" prefWidth="166.0" text="New Game">
                      <effect>
@@ -129,18 +128,26 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Button layoutX="482.0" layoutY="-7.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="18.0" prefWidth="26.0" styleClass="closeButton" text="X">
+            <Button layoutX="481.0" layoutY="-6.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="18.0" prefWidth="26.0" styleClass="closeButton" text="X">
                <effect>
                   <DropShadow />
                </effect>
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
             </Button>
-            <Label layoutX="99.0" layoutY="492.0" text="Match 3 blocks to win!" textFill="#3c9274">
+            <Label layoutX="101.0" layoutY="564.0" text="Match 3 blocks to win!" textFill="#3c9274">
                <font>
                   <Font name="Arial Rounded MT Bold" size="28.0" />
                </font>
                <effect>
                   <GaussianBlur radius="1.6" />
                </effect>
+            </Label>
+            <Label fx:id="gameTitleLabel" layoutX="117.0" layoutY="34.0" style="-fx-text-fill: #fff;" text="Tic Tac Toe" textFill="#007f9f">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="48.0" />
+               </font>
             </Label>
          </children>
          <effect>

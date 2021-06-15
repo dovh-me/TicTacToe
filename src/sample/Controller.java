@@ -21,7 +21,7 @@ public class Controller implements Initializable {
     @FXML
     AnchorPane winAnchorPane;
     @FXML
-    Label winnerLabel;
+    Label winnerLabel,gameTitleLabel;
 
     Game game = new Game();
 
@@ -45,10 +45,13 @@ public class Controller implements Initializable {
             winAnchorPane.setVisible(true);
             board.setDisable(true);
             winnerLabel.setText(game.getNowPlaying().getSymbol() + " WON!");
+            gameTitleLabel.setStyle("-fx-text-fill : #95E8FF");
+
         }else if(game.gameOver()){
             winAnchorPane.setVisible(true);
             board.setDisable(true);
             winnerLabel.setText("DRAW!");
+            gameTitleLabel.setStyle("-fx-text-fill : #95E8FF");
         }
 
         game.setTurns();
@@ -57,6 +60,7 @@ public class Controller implements Initializable {
     public void newGame(){
         board.setDisable(false);
         winAnchorPane.setVisible(false);
+        gameTitleLabel.setStyle("-fx-text-fill : #fff");
         game.resetTiles();
         game = new Game();
         game.setTurns();
