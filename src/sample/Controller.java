@@ -4,8 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.Arrays;
@@ -18,6 +20,8 @@ public class Controller implements Initializable {
     GridPane board;
     @FXML
     AnchorPane winAnchorPane;
+    @FXML
+    Label winnerLabel;
 
     Game game = new Game();
 
@@ -40,6 +44,11 @@ public class Controller implements Initializable {
         if(game.checkWin(playedTile)) {
             winAnchorPane.setVisible(true);
             board.setDisable(true);
+            winnerLabel.setText(game.getNowPlaying().getSymbol() + " WON!");
+        }else if(game.gameOver()){
+            winAnchorPane.setVisible(true);
+            board.setDisable(true);
+            winnerLabel.setText("DRAW!");
         }
 
         game.setTurns();
@@ -52,5 +61,9 @@ public class Controller implements Initializable {
         game = new Game();
         game.setTurns();
         game.setTiles(zeroZero,zeroOne,zeroTwo,oneZero,oneOne,oneTwo,twoZero,twoOne,twoTwo);
+    }
+    public void closeWindow(){
+        Stage thisStage = (Stage) board.getScene().getWindow();
+        thisStage.close();
     }
 }
